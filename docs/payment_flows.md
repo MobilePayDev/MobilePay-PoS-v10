@@ -8,7 +8,8 @@ For a client to start a payment flow, the client first has to detect that a cust
 
 The payment flow makes the payment ready for customer approval immediately upon creation. The sequence diagram below illustrates a sunshine scenario for a payment flow.
 
-The customer checks in on the PoS and receives information about the store on his device. Then, the client initiates a payment on the PoS which is immediately ready for approval and issued to the customer. The payment is now in the *IssuedToUser* state and will remain there until the customer accepts the payment and the payment amount has been reserved. At that point the payment will transition to the *Reserved* state. In this state, the payment can be cancelled or captured by the client resulting in the payment state transitioning to either the *Cancelled* or *Captured* state, respectively.
+The customer checks in on the PoS and receives information about the store on his device. Then, the client initiates a payment on the PoS which is immediately ready for approval and issued to the customer. The payment is now in the *IssuedToUser* state and will remain there until the customer accepts the payment and the payment amount has been reserved. At that point the payment will transition to the *Reserved* state. In this state, the payment can be 
+ed or captured by the client resulting in the payment state transitioning to either the *Cancelled* or *Captured* state, respectively.
 
 [![](assets/images/PaymentFlow-PaymentAfterCheckIn.png)](assets/images/PaymentFlow-PaymentAfterCheckIn.png)
 
@@ -112,6 +113,9 @@ A refund is cancellable until it reaches one of the states *CancelledByMobilePay
 When the refund has been cancelled the state transitions to *CancelledByClient*. 
 
 [![](assets/images/cancel-refund-by-client.png)](assets/images/cancel-refund-by-client.png)
+
+#### In case of lost paymentid
+In the case of the paymentid has been lost you can get your captured payments by calling the endpoint ``GET /v10/payments?posId=2f8ff23b-05e5-4c09-b9be-9fe2c5f748b6&orderId=1f9ff23b-05e5-4c09-b9be-9fe2c5f749b5&state=Captured`` It requires the orderid og the payment and the posid of the pos it was done on.
 
 ## <a name="partial_capture"></a> Partial Capture
 
