@@ -29,6 +29,9 @@ In error cases where the ``paymentId`` is lost it can be retrieved based on the 
 All payments in <i>Reserved</i> state should be captured or cancelled as soon as practically possible. If an error occurs that makes it temporarily impossible to neither cancel or capture the payment, the PoS client is responsible for persisting which payments should be captured and which should be cancelled at a later stage. Later when processing old payments in <i>Reserved</i> state it is important that only payments that should be captured are captured and the same in regards to payments that should be cancelled.
 It is bad practice to poll for every outstanding payments that are in the <i>Reserved</i> state, since that could lead to payments being captured which should have been cancelled and vice versa.
 
+###
+It is the PoS Integrator's responsibility to persist the intent of a payment. So Query payments by state is not supposed to be used for determing if a payment should be <i>Captured</i> or <i>Cancelled</i>.
+
 ## Polling
 It is possible to get information on a payment using ``GET /v10/payments/{paymentId}``, and it is possible to get information about an active check-in using ``GET /v10/pointofsales/{posId}/checkin``. 
 For both of these endpoints, it is allowed to do polling at most once per second. Polling times are controlled by the backend. The response will always contain a time interval that specifies, when the endpoint should at the earliest be polled again. The recommendation is to poll as fast as allowed by the backend to ensure maximal merchant and customer experience.
