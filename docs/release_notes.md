@@ -4,6 +4,9 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2022-04-08
+- Created optimal flow section under [Best practices](best_practices).
+
 ### 2021-08-11
 - Made it clear that it is the ``beaconId`` that should be used in [QR code generation](create_qr_codes) instead of ``posId``.
 
