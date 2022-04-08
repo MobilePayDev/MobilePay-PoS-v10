@@ -49,3 +49,6 @@ There are three principles for choosing a BeaconId.
 3. Otherwise let MobilePay generate a new GUID for you everytime you create a PoS.
 
 Following this approach will lead to fewer issues with collisions for everyone.
+
+## Optimal flow
+To ensure the best costumer experience, the payment flow from a costumers point of view, ends when the payment has reached Reserved state. At this stage the customer is allowed to leave the store.
