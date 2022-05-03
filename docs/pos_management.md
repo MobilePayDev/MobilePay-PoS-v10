@@ -17,9 +17,6 @@ If the merchant already has a MobilePay PoS solution with integration to either 
 
 [![](assets/images/get_store.png)](assets/images/get_store.png)
 
-In contrary to the API V06, V07 and V08, MobilePay requires that the integrator provides a Merchant VAT in API V10. To help integrators acquire the VAT, a temporary endpoint has been developed to help ease the migration of PoSes from earlier versions of the API to V10. It is available under ``GET https://api.mobilepay.dk/pos-core-for-integrators/public/v1/stores/vat``, having two query parameters: ``merchantBrandId`` and ``merchantLocationId``.
-This endpoint will be removed in 2021Q2.
-
 ## <a name="pos_creation"></a> PoS Creation
 A PoS is created using the ````POST /v10/pointofsales```` endpoint. A PoS is identified in the PoS V10 API by a ````posId```` that is assigned by MobilePay upon creation of the PoS. Clients can provide their own internal identifier as a ````merchantPosId```` upon creation and use the ````GET /v10/pointofsales```` endpoint to lookup a ````posId```` based on a ````merchantPosId````. The `merchantPosId` field is required, so if no internal identifier is applicable, the client should generate and supply a random string (eg. a fresh GUID) instead.
 
