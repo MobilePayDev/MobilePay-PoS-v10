@@ -4,6 +4,10 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2022-05-03
+- Removed information regarding a now decomissioned migration endpoint.
+
+---
 ### 2022-04-08
 - Created optimal flow section under [Best practices](best_practices).
 
