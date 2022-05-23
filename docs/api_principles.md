@@ -175,6 +175,6 @@ If a response includes a `pollDelayInMs` of 1000, the client **must** wait at le
 before polling the same endpoint. In case no response is received when querying one of the above polling endpoints,
 then clients should either:
 
-* Use the `pollDelayInMs` from the last successful call to the given endpoint.
+* We recommend using the `pollDelayInMs` from the last successful call to the given endpoint for optimal performance.
 * Continue polling using an exponential backoff with jitter strategy (i.e. doubling the delay between each retried 
 call and adding some randomness to the delay to avoid overloading the backend).
