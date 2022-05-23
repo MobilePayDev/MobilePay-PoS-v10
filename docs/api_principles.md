@@ -171,6 +171,8 @@ GET /v10/refunds/{refundId}
 GET /v10/pointofsales/{posId}/checkin
 ````
 
+The `pollDelayInMs` field must be used when present in the response body. This insures optimal polling, reducing time to completion of payment flows.
+
 If a response includes a `pollDelayInMs` of 1000, the client **must** wait at least 1000ms (i.e. 1 second)
 before polling the same endpoint. In case no response is received when querying one of the above polling endpoints,
 then clients should either:
