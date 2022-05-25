@@ -172,7 +172,11 @@ GET /v10/pointofsales/{posId}/checkin
 ````
 
 If a response includes a `pollDelayInMs` of 1000, the client **must** wait at least 1000ms (i.e. 1 second)
-before polling the same endpoint. In case no response is received when querying one of the above polling endpoints,
+before polling the same endpoint.
+
+> We recommend that clients directly use the `pollDelayInMs` response since a low polling delay can ensure a faster payment flow.
+
+In case no response is received when querying one of the above polling endpoints,
 then clients should either:
 
 * Use the `pollDelayInMs` from the last successful call to the given endpoint.
