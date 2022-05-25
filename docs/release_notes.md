@@ -4,6 +4,10 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2022-05-25
+- Made it clear that directly using the `pollDelayInMs` response can improve payment flow completion time [API Principles](api_principles).
+
+---
 ### 2022-05-03
 - Removed information regarding a now decomissioned migration endpoint.
 
@@ -13,7 +17,7 @@ The Point of Sale API V10 is now in production.
 
 ---
 ### 2021-08-11
-- Made it clear that it is the ``beaconId`` that should be used in [QR code generation](create_qr_codes) instead of ``posId``.
+- Made it clear that it is the `beaconId` that should be used in [QR code generation](create_qr_codes) instead of `posId`.
 
 ---
 ### 2021-08-04
@@ -34,7 +38,7 @@ The Point of Sale API V10 is now in production.
 ---
 ### 2021-03-16
 - Removed CalibrationType property from [Input Formats](input_formats#poses) since it has been removed from the V10 API.
-- Made the [Detecting MobilePay by notification service](detecting_mobilepay#notification) section more clear by adding the call ``GET /pointofsales/{posid}/checkin`` to the flow diagram
+- Made the [Detecting MobilePay by notification service](detecting_mobilepay#notification) section more clear by adding the call ``GET /pointofsales/{posid}/checkin`` to the flow diagram.
 
 ---
 ### 2021-03-09
