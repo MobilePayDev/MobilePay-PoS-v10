@@ -4,7 +4,7 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 ### 2022-07-21
-- Added error code 1204 to API Errors
+- Introduced error code 1204 to [API Errors](endpoint_errors.md)
 
 ---
 ### 2022-05-25
