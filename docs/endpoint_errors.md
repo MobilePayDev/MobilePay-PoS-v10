@@ -40,7 +40,7 @@ This page contains information regarding all the non-successful status-codes and
 |------------|-------------|-------------|
 | 400 | 1102`` `` <br> 1113`` `` <br> 1117`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``Amount`` <br> Invalid ``OrderId`` <br> Invalid ``MerchantPaymentLabel`` <br> Invalid ``x-mobilepay-idempotency-key`` header <br> Duplicated ``x-mobilepay-idempotency-key`` header <br> Missing ``x-mobilepay-idempotency-key`` header |
 | 403 | 1400 | Cannot initiate payments on a point of sale created by a different integrator |
-| 409 | 1000 <br> 1301 <br> 1306`` `` <br> </p> | Point of Sale not found <br> A payment is already active. Cancel it before starting a new one <br> ``x-mobilepay-idempotency-key`` header has to be unique per request unless the request is a retry of a previous request <br>  |
+| 409 | 1000 <br> 1204 <br> 1301 <br> 1306`` `` <br> </p> | Point of Sale not found <br> <br> The store for the given point of sale is not activated. Please activate the store before starting a payment <br> A payment is already active. Cancel it before starting a new one <br> ``x-mobilepay-idempotency-key`` header has to be unique per request unless the request is a retry of a previous request <br>  |
 
 </details><br>
 
