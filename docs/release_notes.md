@@ -3,7 +3,10 @@
 The Point of Sale API V10 is now in production.
 
 ## Changelog
+### 2022-07-28
+- Introduced error code 1204 to [API Errors](endpoint_errors.md)
 
+---
 ### 2022-05-25
 - Made it clear that directly using the `pollDelayInMs` response can improve payment flow completion time in [API Principles](api_principles).
 
