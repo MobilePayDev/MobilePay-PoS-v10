@@ -3,6 +3,9 @@
 The Point of Sale API V10 is now in production.
 
 ## Changelog
+### 2022-08-12
+- Introduced error code 1368 to [API Errors](endpoint_errors.md) and edited description on refundflow in [Refund Flow](payment_flows#refunds)
+
 ### 2022-07-28
 - Introduced error code 1204 to [API Errors](endpoint_errors.md)
 
