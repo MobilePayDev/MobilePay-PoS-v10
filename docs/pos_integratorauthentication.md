@@ -5,16 +5,7 @@ The MobilePay PoS V10 API uses TLS for communication security and data integrity
 
 1. **Read API documentation.** You will find it in the  [APIs menu](https://sandbox-developer.mobilepay.dk/product).  
 
-2.  **Log-in on the developer portal.** Go to [Sandbox developer portal](https://sandbox-developer.mobilepay.dk/) and log in with your credentials.
-
- 3.  **Create an app in the developer portal.** Go to My Apps > Create new App to register a new application. You need to supply the `x-ibm-client-id` when calling APIs. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly.  More details about the usage of `x-ibm-client-id` below in the authentication section. 
-
-4.  **Subscribe the app to APIs.**  Go to [APIs](https://sandbox-developer.mobilepay.dk/product) and subscribe to the following APIs:
--  PoS for Integrators  
--  PoS User simulation for Integrators
--  Integrator Authentication 
- 
- 5.  **Receive OAuth Client Credentials via zip file.** The Client Credentials will be used when calling the token endpoint (described below) to generate an access token. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message to ensure the password protected file and the password is not transmitted together.
+2. **Receive OAuth Client Credentials via zip file.** The Client Credentials will be used when calling the token endpoint (described below) to generate an access token. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message to ensure the password protected file and the password is not transmitted together.
 
 Now you are ready to move on to the authentication section below.  
 
@@ -43,7 +34,6 @@ The token endpoint (`POST /connect/token`) is used when requesting an access tok
 headers must be set:
 
  - **``Content-Type``**: x-www-urlencoded
- - **``x-ibm-client-id``**: `client_id`
  - **``Authorization``**: Basic (`client_id`:`client_secret`).toBase64EncodedString().
 
 The OAuth `client_id`and `client_secret` will be sent to the integrator in a closed zip file from [developer@mobilepay.dk](mailto:developer@mobilepay.dk) to integrators e-mail (step 5 in the [Client onboarding guide](pos_integratorauthentication#client_onboarding)).
@@ -78,7 +68,6 @@ You might encounter the following status codes :
 
 ```
 curl --location --request POST 'https://api.sandbox.mobilepay.dk/integrator-authentication/connect/token' \
---header 'x-ibm-client-id: {YOUR_GENERATED_CLIENT-ID}' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic ({YOUR_CLIENT_ID}:{YOUR_CLIENT_SECRET}).toBase64EncodedString()' \
 --data-urlencode 'grant_type=client_credentials' \
